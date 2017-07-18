@@ -12,9 +12,12 @@
 //
 //= require rails-ujs
 //= require turbolinks
-//= require bootstrap-sprockets
 //= require jquery
+//= require jquery_ujs
+//= require bootstrap-sprockets
 //= require angular
 //= require angular-animate
 //= require angular-resource
+//= require d3
+//= require d3Config.js
 //= require_tree .
