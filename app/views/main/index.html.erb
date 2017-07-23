@@ -1,29 +1,33 @@
-
-
-
-
 <h1>Perseus Web Crawler</h1>
-<form class="form-inline">
-  <div class="form-group">
-    <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Enter Start URL">
-  </div>
-  <br>
-  <br>
-<div class="radio">
-  <label>
-    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-    Depth First Search
-  </label>
-</div>
-<br>
-<div class="radio">
-  <label>
-    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-    Breadth First Search
-  </label>
-</div>
-<br>
-<br>
-<br>
-  <button type="submit" class="btn btn-default">Crawl</button>
+<form class="form-inline" method="post" action="/process">
+    <div class="form-group">
+        <input type="url" class="form-control" placeholder="Enter Start URL" name="url" size="45">
+    </div>
+    <br><br>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Enter a keyword to stop the search" name="keyword" size="45">
+    </div>
+    <br><br>
+    <div class="form-group">
+        <input type="number" class="form-control" placeholder="MAX number of links" name="max">
+    </div>
+    <br>
+    <br>
+    <div class="radio">
+        <label>
+            <input type="radio" name="crawloption" id="optionsRadios1" value="option1" checked> Depth First Search
+        </label>
+    <br>
+    <h4>OR</h4>
+        <label>
+            <input type="radio" name="crawloption" id="optionsRadios2" value="option2"> Breadth First Search
+        </label>
+    </div>
+    <br>
+    <br>
+    <br>
+    <button type="submit" class="btn btn-primary btn-lg">Crawl</button>
 </form>
+<script>
+document.getElementById("home_nav").classList.add("active")
+</script>
