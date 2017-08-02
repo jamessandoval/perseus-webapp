@@ -16,6 +16,15 @@ import scrapy
     # name = scrapy.Field()
     # link = scrapy.Field()
 	
-class MyItem(scrapy.Item):
-    url = scrapy.Field()
+class urlMap(scrapy.Item):
+	searching = scrapy.Field()
+	foundTarget = scrapy.Field()
+	reachedMax = scrapy.Field()
+	url = scrapy.Field()
+	maxURLs = scrapy.Field()
+	scrapeTarget = scrapy.Field()
+	urlDict = scrapy.Field()
+	targetNode = scrapy.Field()
+	foundGen = scrapy.Field()
 
+	
