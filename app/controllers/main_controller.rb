@@ -3,11 +3,10 @@ class MainController < ApplicationController
   end
 
   def create
-    #data = system("python #{Dir.pwd}/tutorialEdit/tutorial/spiders/quotes_spider.py")
+    # data = system("python #{Dir.pwd}/tutorialEdit/tutorial/spiders/quotes_spider.py")
     website_list = JSON.parse(File.read('output2.JSON'))
     website_list.each do |website|
       Storage.create(data: website["urlDict"]["searching"])
-      # Storage.create(data: website["urlDict"]["searching"], website["latency"], website["title"])
     end
     respond_to do |format|
       format.html

@@ -21,4 +21,5 @@
 //= require d3
 //= require d3Config.js
 //= require_tree .
+//= require scrapy
 
