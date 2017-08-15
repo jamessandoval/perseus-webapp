@@ -1,5 +1,27 @@
 {
   "name": "perseus-webapp",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "scrapy": "0.0.1"
+  },
+  "description": "- Web crawler Visualizer - in progress.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EsotericCoder/perseus-webapp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EsotericCoder/perseus-webapp/issues"
+  },
+  "homepage": "https://github.com/EsotericCoder/perseus-webapp#readme"
 }
