@@ -18,6 +18,7 @@
 //= require angular
 //= require angular-animate
 //= require angular-resource
+//= require ng-cookies
 //= require d3
 //= require d3Config.js
 //= require_tree .

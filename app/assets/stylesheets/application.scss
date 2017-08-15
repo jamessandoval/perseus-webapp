@@ -30,9 +30,10 @@
 
 #dataContainer {
 
+  overflow:auto;
   background-color:#808080;
   border: solid #E6E6E6 1px;
-  height:10vw;
+  height:auto;
   width: 100%;
   margin-left: auto;
   margin-right:auto;

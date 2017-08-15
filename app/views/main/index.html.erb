@@ -39,8 +39,10 @@
         <br>
     </form>
 
-    <div id="dataContainer">
+    <div id="dataContainer" ng-show="entries != null">
     <h4>Previous Search Parameters:</h4>
+    <button class="btn btn-warning" ng-click="cookiereset()">Reset Cookies</button>
+    <br>
         <table class="table">
             <tr>
                 <th>URL:</th>
@@ -49,10 +51,12 @@
             </tr>
             <tr ng-repeat="entry in entries">
                 <td>{{entry.url}}</td>
-                <td>{{emtry.keyword}}</td>
+                <td>{{entry.keyword}}</td>
                 <td>{{entry.type}}</td>
             </tr>
+            <tr><td colspan="3"></td></tr>
         </table>
+
     </div>
 </div>
 <script>
