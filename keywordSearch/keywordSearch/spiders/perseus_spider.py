@@ -6,8 +6,6 @@ from keywordSearch.items import urlMap
 from scrapy.selector import Selector
 from w3lib.html import remove_tags
 
-
-
 class MySpider(CrawlSpider):
     name = 'keyword_search'        #name of spider
 	#allowed_domains = ['ikea.com']
@@ -32,7 +30,8 @@ class MySpider(CrawlSpider):
 			#yield end_parse(response)
 			item['urlDict'] = {'foundTarget' : response.url}   #your url with the target keyword is here
 			item['targetNode'] = {remove_tags(response.xpath(xSrchString).extract_first())}  #your text containing your keyword is here, tags removed a much as possible
-			
+			item['title'] = response.css('title::text').extract()
+			item['latency'] = response.meta['download_latency']
 			
 			closeable = 1
 			#print("i'm in parse url scrape target is " + '//*[contains(text(), '+str(self.scrapeTarget)[1:-1]+')]' + "\n")
@@ -40,6 +39,9 @@ class MySpider(CrawlSpider):
 			
 		elif closeable != 1:
 			item['urlDict'] = {'searching' : response.url}   #record url that didn't contain the keyword
+			item['title'] = response.css('title::text').extract()
+			item['latency'] = response.meta['download_latency']
+
 			yield item
 			
 		if closeable == 1:
