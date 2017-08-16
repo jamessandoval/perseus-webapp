@@ -1,7 +1,7 @@
 How to use the Perseus-keyword_search Spider
 
 0.  If you are not publishing yet, it is recommended that you install scrapy behind a vitual environment. If you do not already have one setup, simple instructions can be found here: notes.webutvikling.org/get-python-virtualenv-pip-without-sudo/ to make it work on the flip server, however instead of merely typing 'source activate', you may have to type 'source activate.csh' to activate your virutal environment.
-1.  Be sure that the web scraper is installed- "npm install scrapy"
+1.  Be sure that the web scraper is installed- "pip install scrapy"
 2.  From the command line: 
 3.  Breadth First Search-
 scrapy crawl keyword_search -a start_url=<url> -a find_word=<target-word> -s CLOSESPIDER_PAGECOUNT=<max pages> -o <filename>.JSON -t json
