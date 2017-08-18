@@ -1,0 +1,17 @@
+[
+{"urlDict": {"searching": "http://www.ikea.com/"}, "latency": 0.033254146575927734, "title": ["IKEA.com \u2013 International homepage \u2013 IKEA"]},
+{"urlDict": {"searching": "http://www.inter.ikea.com/"}, "latency": 0.21137094497680664, "title": ["\r\n\tStart page - Inter IKEA Group\r\n"]},
+{"urlDict": {"searching": "http://www.ikea.lv/en/"}, "latency": 0.45354700088500977, "title": ["IKEA furniture | Swedish design at afordable prices"]},
+{"urlDict": {"searching": "http://www.ikea.gr/"}, "latency": 0.9020071029663086, "title": ["\u0388\u03c0\u03b9\u03c0\u03bb\u03b1 & \u0394\u03b9\u03b1\u03ba\u03cc\u03c3\u03bc\u03b7\u03c3\u03b7 | IKEA \u0395\u03bb\u03bb\u03ac\u03b4\u03b1"]},
+{"urlDict": {"searching": "http://www.ikea.com/pl/pl/"}, "latency": 0.07683491706848145, "title": ["IKEA - Meble i akcesoria do kuchni, sypialni, \u0142azienki i pokoju - IKEA"]},
+{"urlDict": {"searching": "http://www.ikea.lv/ru/"}, "latency": 0.4500570297241211, "title": ["IKEA furniture | Swedish design at afordable prices"]},
+{"urlDict": {"searching": "http://www.ikea.com/no/no/"}, "latency": 0.1502230167388916, "title": ["IKEA.no \u2013 M\u00f8bler til hele huset - IKEA"]},
+{"urlDict": {"searching": "http://www.ikea.lv/"}, "latency": 0.4596388339996338, "title": ["IKEA furniture | Swedish design at afordable prices"]},
+{"urlDict": {"searching": "http://www.ikea.com/nl/nl/"}, "latency": 0.05501389503479004, "title": ["IKEA - Aandacht maakt alles mooier - IKEA"]},
+{"urlDict": {"searching": "http://ikeamuseum.com/en/"}, "latency": 0.7377572059631348, "title": ["IKEA Museum", "Textile playground"]},
+{"urlDict": {"searching": "http://www.ikea.lv/en/cookie-policy/"}, "latency": 0.46114206314086914, "title": ["Cookie policy - IKEA furniture | Swedish design at afordable prices"]},
+{"urlDict": {"searching": "http://www.ikea.com/lt/lt/"}, "latency": 0.08916282653808594, "title": ["IKEA baldai | \u0160vedi\u0161kas dizainas prieinamomis kainomis - IKEA"]},
+{"urlDict": {"searching": "http://www.ikea.com/it/it/"}, "latency": 0.1329820156097412, "title": ["Mobili, accessori e decorazioni per l'arredamento della casa - IKEA"]},
+{"urlDict": {"foundTarget": "http://www.ikea.com/ie/en/"}, "targetNode": ["Sofas &amp; armchairs"], "title": ["Furniture & Home Furnishings | IKEA Ireland"], "latency": 0.493056058883667},
+{"urlDict": {"searching": "http://www.ikea.com/hu/hu/"}, "latency": 0.11182093620300293, "title": ["Lakberendez\u00e9s, b\u00fatorok, textilek, otthoni kieg\u00e9sz\u00edt\u0151k - Szebb h\u00e9tk\u00f6znapokat teremteni az emberek t\u00f6bbs\u00e9ge sz\u00e1m\u00e1ra. - IKEA"]}
+]

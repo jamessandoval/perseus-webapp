@@ -1,6 +1,6 @@
 <div id="UrlView">
     <h4><span id="title">Hover over bars to view data</span></h4>
-    <h4><span id="url">(Click on a bar to follow a url)</span></h4>    
+    <h4><span id="url">(Click on a bar to follow a url)</span></h4>
 </div>
 <div id="viewer">
     <svg height="500" width="800"></svg>
@@ -10,22 +10,42 @@
 $(document)
 
     .on("mouseenter", "rect", function() {
-        this.style.cursor='pointer';
+        this.style.cursor = 'pointer';
         var currentTitle = this.id;
         var currentUrl = this.getAttribute("class");
         $('#url').text(currentUrl);
         $('#title').text(currentTitle);
-        cursor: pointer;
 
     }).on('click', "rect", function(e) {
         e.preventDefault();
         window.location.assign($('#url').text());
     });
 
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return "100";
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+var type = getParameterByName('type');
+var url = getParameterByName('url');
+var keyword = getParameterByName('keyword');
+var max = getParameterByName('max');
+
+// Check if optional params are present
+
 // tooltip data
 var canvas = d3.select('svg');
+// https://api.myjson.com/bins/gl1c1
+// https://api.myjson.com/bins/v1vc1
+scrapyUrl = "http://127.0.0.1:5000/"+type+"/url/"+url+"/max/"+max+"/keyword/"+keyword+"";
+console.log(scrapyUrl)
 
-var somevalue = d3.json("https://api.myjson.com/bins/v1vc1", function(data) {
+var somevalue = d3.json(scrapyUrl, function(data) {
 
     function rand(min, max) {
         return Math.round(Math.random() * (max - min) + min);
@@ -112,7 +132,7 @@ var somevalue = d3.json("https://api.myjson.com/bins/v1vc1", function(data) {
             .attr('y', function(d) {
                 return d.y;
             })
-            .attr('stroke-width', 2)
+            .attr('stroke-width', .5)
             .attr('stroke', '#FFFFFF')
 
             .attr('id', function(d) {

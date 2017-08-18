@@ -2,21 +2,3 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/* Viewer Container */
-#viewer svg {
-
-    background-color: #191919;
-    border: solid 1px #999999;
-    width: 800px;
-    height: 500px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#view-controls {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 1em;
-    margin-top: 1em;
-}

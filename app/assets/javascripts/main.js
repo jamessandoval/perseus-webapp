@@ -21,8 +21,7 @@ app.controller('MainCtrl', ['$scope', '$location', '$window', 'cookies', '$http'
     // cookie reset 
     $scope.cookiereset = function() {
         cookies.set('cookieStore', "");
-        // temporary page reload
-        $window.location.href = $location.path();
+
     }
 
     // Submit Button handler
@@ -59,33 +58,21 @@ app.controller('MainCtrl', ['$scope', '$location', '$window', 'cookies', '$http'
         //127.0.0.1:5000/breadth/url/http://www.reddit.com/max/10/keyword/earth
         //127.0.0.1:5000/depth/url/http://www.reddit.com/max/10/keyword/earth
 
-        $location.path('/viewer');
+
+        var url = self.entry.url;
+        var keyword = self.entry.keyword;
+        var max = self.entry.max;
+        var type = self.entry.crawloption;
+
+        $location.path('/viewer?type='+type+'&url='+url+'&keyword='+keyword+'&max='+max+'');
         $location.replace();
         $window.location.href = $location.path();
 
-        $.ajax({
-            url: "HTTP://127.0.0.1:5000/breadth/url/http://www.reddit.com/max/10/keyword/earth",
-            type: "GET",
-            contentType: "application/json",
-            success: function(data) {
-                $location.path('/viewer');
-                $location.replace();
-                $window.location.href = $location.path();
-            }
-        });
     };
 
-    $scope.restart = function() {
-        $.ajax({
-            url: "HTTP://127.0.0.1:5000/breadth/url/http://www.reddit.com/max/10/keyword/earth",
-            type: "GET",
-            contentType: "application/json",
-            success: function(data) {
-                $location.path('/viewer');
-                $location.replace();
-                $window.location.href = $location.path();
-            }
-        });
-    }
+    //$scope.restart = function() {
+
+    //}
+
 
 }]);

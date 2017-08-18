@@ -50,7 +50,13 @@ def depth(url, max, keyword):
     root_dir = os.getcwd()
     
     #os.remove(newpid+'.JSON')
-    return send_from_directory(root_dir, newpid+'.JSON')
+    response = send_from_directory(root_dir, newpid+'.JSON')
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+    response.headers["Pragma"] = "no-cache"
+    response.headers["Expires"] = "0"
+    response.headers['Cache-Control'] = 'public, max-age=0'
+    return response
 
 if __name__ == '__main__':
 

@@ -20,9 +20,6 @@ gem 'rails-assets-ng-cookies', source: 'https://rails-assets.org'
 # d3 - data visualiztion:
 gem 'd3-rails'
 
-# Import cocaine for command lines
-gem 'cocaine', '~> 0.5.8'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.2'
 # Use mysql as the database for Active Record
@@ -41,6 +38,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+
+gem 'rack-cors', :require => 'rack/cors'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
