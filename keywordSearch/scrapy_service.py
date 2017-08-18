@@ -4,9 +4,14 @@ import flask
 import os
 import subprocess
 from flask import send_from_directory
+from flask_cors import CORS, cross_origin
+
 
 # Create the application.
 APP = flask.Flask(__name__)
+CORS(APP)
+
+#cors = CORS(APP, resources={r"/breadth": {"origins": "http://localhost:port"}})
 
 # 127.0.0.1:5000/breadth/url/http://www.reddit.com/max/10/keyword/earth
 @APP.route('/breadth/url/<path:url>/max/<int:max>/keyword/<string:keyword>')
@@ -23,7 +28,13 @@ def breadth(url, max, keyword):
 
     
     #os.remove(newpid+'.JSON')
-    return send_from_directory(root_dir, newpid+'.JSON')
+    response = send_from_directory(root_dir, newpid+'.JSON')
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+    response.headers["Pragma"] = "no-cache"
+    response.headers["Expires"] = "0"
+    response.headers['Cache-Control'] = 'public, max-age=0'
+    return response
 
 # 127.0.0.1:5000/depth/url/http://www.reddit.com/max/10/keyword/earth
 @APP.route('/depth/url/<path:url>/max/<int:max>/keyword/<string:keyword>')

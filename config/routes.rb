@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get 'viewer' =>  'viewer#index'
 
-  get 'main/index'
+  get 'main/index' => 'main/#index'
 
   root 'main#index'
 

@@ -1,90 +1,131 @@
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<div id="viewer">
-    <svg width="100%" height="100%" id="golden_ratio" data-name="golden ratio" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 901.93 721">
-        <defs>
-            <style>
-            .cls-1,
-            .cls-2,
-            .cls-3 {
-                fill: none;
-            }
-
-            .cls-1,
-            .cls-2 {
-                stroke: #231f20;
-            }
-
-            .cls-1 {
-                stroke-miterlimit: 10;
-            }
-
-            .cls-2,
-            .cls-3 {
-                stroke-linecap: round;
-                stroke-linejoin: round;
-            }
-
-            .cls-2 {
-                stroke-width: 3px;
-            }
-
-            .cls-3 {
-                stroke: #03bfd7;
-                stroke-width: 2px;
-            }
-
-            .cls-4 {
-                fill: #008193;
-            }
-
-            .cls-5 {
-                fill: #03bfd7;
-            }
-
-            .cls-6 {
-                font-size: 24px;
-                fill: #ffffff;
-                font-family: Myriad Roman;
-            }
-            </style>
-        </defs>
-        <title>golden ratio</title>
-        <rect class="cls-1" x="1" y="163.64" width="556.34" height="556.35" />
-        <rect class="cls-1" x="557.34" y="163.64" width="343.66" height="343.66" />
-        <rect class="cls-1" x="688.3" y="507.28" width="212.7" height="212.7" />
-        <rect class="cls-1" x="557.34" y="589.07" width="130.92" height="130.92" />
-        <rect class="cls-1" x="557.34" y="507.3" width="81.68" height="81.77" />
-        <rect class="cls-1" x="639.02" y="507.3" width="49.28" height="49.28" />
-        <rect class="cls-1" x="655.71" y="556.58" width="32.58" height="32.5" />
-        <rect class="cls-1" x="639.02" y="572.38" width="16.69" height="16.69" />
-        <path class="cls-2" d="M789.39,562.57" transform="translate(-97 -20)" />
-        <path class="cls-3" d="M736,592.42a16.68,16.68,0,0,0,16.7,16.66,32.54,32.54,0,0,0,32.58-32.5A49.28,49.28,0,0,0,736,527.3c-45,0-81.52,36.7-81.52,82A130.73,130.73,0,0,0,785.23,740c117.47,0,212.7-95.23,212.7-212.7,0-189.77-153.84-343.62-343.62-343.62C347.07,183.68,98,432.75,98,740" transform="translate(-97 -20)" />
-        <line class="cls-1" x1="901" y1="10" x2="557.34" y2="10" />
-        <line class="cls-1" x1="1" y1="20" x2="1" />
-        <line class="cls-1" x1="557.34" y1="20" x2="557.34" />
-        <line class="cls-1" x1="901" y1="20" x2="901" />
-        <line class="cls-1" x1="1" y1="10" x2="557.34" y2="10" />
-        <rect class="cls-4" x="557.34" y="37" width="343.66" height="6" />
-        <rect class="cls-5" x="1" y="37" width="556.34" height="6" />
-        <text class="cls-6" transform="translate(224.14 70.87)">a=61.77</text>
-        <text class="cls-6" transform="translate(699.52 70.87)">b=38.22</text>
-        <text class="cls-6" transform="translate(379.84 127.03)">1.618</text>
-        <text class="cls-6" transform="translate(244.86 115.17)">a</text>
-        <text class="cls-6" transform="translate(243.82 143.76)">b</text>
-        <line class="cls-1" x1="237.71" y1="120.84" x2="263.58" y2="120.84" />
-        <text class="cls-6" transform="translate(303.55 115.17)">a+b</text>
-        <text class="cls-6" transform="translate(317.53 143.76)">a</text>
-        <line class="cls-1" x1="300.38" y1="120.84" x2="346.24" y2="120.84" />
-        <text class="cls-6" transform="translate(273.18 127)">=</text>
-        <text class="cls-6" transform="translate(357.18 127)">=</text>
-        <text class="cls-6" transform="translate(655.84 127.03)">1.618</text>
-        <text class="cls-6" transform="translate(495.47 115.17)">61.77 / 38.22</text>
-        <text class="cls-6" transform="translate(633.18 127)">=</text>
-        <text class="cls-6" transform="translate(512.75 143.76)">100 / 61.77</text>
-    </svg>
+<div id="UrlView">
+    <h4><span id="title">Hover over bars to view data</span></h4>
+    <h4><span id="url">(Click on a bar to follow a url)</span></h4>    
 </div>
+<div id="viewer">
+    <svg height="500" width="800"></svg>
+</div>
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script>
+$(document)
+
+    .on("mouseenter", "rect", function() {
+        this.style.cursor='pointer';
+        var currentTitle = this.id;
+        var currentUrl = this.getAttribute("class");
+        $('#url').text(currentUrl);
+        $('#title').text(currentTitle);
+        cursor: pointer;
+
+    }).on('click', "rect", function(e) {
+        e.preventDefault();
+        window.location.assign($('#url').text());
+    });
+
+// tooltip data
+var canvas = d3.select('svg');
+
+var somevalue = d3.json("https://api.myjson.com/bins/v1vc1", function(data) {
+
+    function rand(min, max) {
+        return Math.round(Math.random() * (max - min) + min);
+    }
+    //console.log(data[i].urlDict.searching);
+    //console.log(data[i].urlDict.searching.length);
+    //console.log(data[i].title[0]);
+    //console.log(data[0].latency);
+
+    // Get number of items
+    // get width of viewing area.
+    var viewWidth = "800";
+    var viewHeight = "500";
+
+    var margin = 4;
+
+    // get size of array
+    var totalLinks = data.length
+    // reduce totalLinks for necessary spacing in this case 4px 
+    var spacing = totalLinks * (margin);
+    // determine number of objects 
+    var numObjects = totalLinks;
+    // Get object width
+    var objectWidth = Math.floor((viewWidth - spacing) / numObjects);
+
+    var rectangleData = [];
+    var height = Math.round(data[0].latency * 400)
+
+    rectangleData.push({
+        x: '0',
+        y: viewHeight - height,
+        width: objectWidth,
+        height: height,
+        c: 'rgb(' + rand(0, 255) + ', ' + rand(0, 255) + ', ' + rand(0, 255) + ')',
+        url: data[0].urlDict.searching,
+        title: data[0].title
+    });
+
+    var xValue;
+    for (var i = 1; i < numObjects; i++) {
+
+        // calculate Position:
+        xValue = Math.round(((rectangleData[i - 1].width + (margin * 1.1)) * i));
+
+        // Calculate Height - based on latency download
+        height = Math.round(data[i].latency * 400);
+
+        // draw the scene and delay after an element is added.
+        rectangleData.push({
+            x: xValue,
+            y: viewHeight - height,
+            width: objectWidth,
+            height: height,
+            c: 'rgb(' + rand(0, 255) + ', ' + rand(0, 255) + ', ' + rand(0, 255) + ')',
+            url: data[i].urlDict.searching,
+            title: data[i].title
+        });
+    }
+
+    // draw the scene
+    draw();
+
+    function draw(rect) {
+        var rectangles = canvas.selectAll('rect').data(rectangleData);
+        rectangles
+            .enter()
+            .append('rect')
+            .attr('x', function(d) {
+                return d.x;
+            })
+            .attr('y', 500)
+            .attr('fill', function(d) {
+                return d.c;
+            })
+            .attr('width', function(d) {
+                return d.width;
+            })
+            .attr('height', 0)
+            .transition()
+            .duration(3000)
+            .attr('height', function(d) {
+                return d.height;
+            })
+            .attr('y', function(d) {
+                return d.y;
+            })
+            .attr('stroke-width', 2)
+            .attr('stroke', '#FFFFFF')
+
+            .attr('id', function(d) {
+                return d.title;
+            })
+
+            .attr('class', function(d) {
+                return d.url;
+            })
+    }
+});
+</script>
 <div id="view-controls">
-    <button class="btn btn-danger btn-lg">STOP</button>
     <button class="btn btn-warning btn-lg">RESET</button>
 </div>
 <script>

@@ -1,36 +1,50 @@
 <html ng-app="crawlerApp">
+
 <head>
     <title>PerseusWebapp</title>
     <%= csrf_meta_tags %>
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
             <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
+
 <body>
     <div class="site-wrapper">
         <div class="site-wrapper-inner">
-            <div class="cover-container">
-                <div class="masthead clearfix">
-                    <div class="inner">
-                        <h3 class="masthead-brand">Perseus Link Visualizer</h3>
-                        <nav>
-                            <ul class="nav masthead-nav">
-                                <li id="home_nav"><a href="/">Home</a></li>
-                                <li id="view_nav"><a href="/viewer">Viewer</a></li>
-                                <li id="stat_nav"><a href="/statistics">Statistics</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <div class="inner cover">
-                    <%= yield %>
-                </div>
-                <div class="mastfoot">
-                    <div class="inner">
-                        <p>Link to <a href="https://github.com/EsotericCoder/perseus-webapp">Github Repository</a>.</p>
+            <div class="masthead clearfix">
+                <div class="inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8">
+                                <h3 class="masthead-brand">Perseus Link Visualizer</h3>
+                                <nav>
+                                    <ul class="nav masthead-nav">
+                                        <li id="home_nav"><a href="/">Home</a></li>
+                                        <li id="view_nav"><a href="/viewer">Viewer</a></li>
+                                        <li id="stat_nav"><a href="/about">About</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="mainpadding">
+            <%= yield %>
+            </div>
+                <div class="mastfoot">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8">
+                                <p>Link to <a href="https://github.com/EsotericCoder/perseus-webapp">Github Repository</a>.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+                </div>
         </div>
-    </div>
 </body>
+
 </html>

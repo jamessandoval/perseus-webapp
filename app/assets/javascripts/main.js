@@ -1,28 +1,30 @@
 var app = angular.module('crawlerApp', ['ngCookie']);
 
-app.controller('MainCtrl', ['$scope', '$location', '$window', 'cookies', function($scope, $location, $window, cookies) {
-    // word validation
+app.controller('MainCtrl', ['$scope', '$location', '$window', 'cookies', '$http', function($scope, $location, $window, cookies, $http) {
+
+    // scrapy crawl keyword_search -a start_url=http://www.reddit.com -a find_word=hello -s CLOSESPIDER_PAGECOUNT=10 -o breadth_example.JSON -t json
+
+    // single word validation
     $scope.sample = {
         word: /^\s*\w*\s*$/
     };
 
+    $scope.entries = {};
+
     // add the cookieStore array to the scope to view on page
-    if(cookies.get('cookieStore')){
-
-    	$scope.entries = [];
-    	var storedArray = JSON.parse(cookies.get('cookieStore'));
-    	$scope.entries = storedArray;
-
+    if (cookies.get('cookieStore')) {
+        //$scope.entries = [];
+        var storedArray = JSON.parse(cookies.get('cookieStore'));
+        $scope.entries = storedArray;
     }
 
     // cookie reset 
-    $scope.cookiereset = function(){
-    	cookies.set('cookieStore', "");
-    	// temporary page reload
-    	$window.location.href = $location.path();
-
+    $scope.cookiereset = function() {
+        cookies.set('cookieStore', "");
+        // temporary page reload
+        $window.location.href = $location.path();
     }
-    
+
     // Submit Button handler
     var self = this;
 
@@ -39,36 +41,51 @@ app.controller('MainCtrl', ['$scope', '$location', '$window', 'cookies', functio
         };
 
         // if a cookie value is set get it
-        if(cookies.get('cookieStore')){
+        if (cookies.get('cookieStore')) {
 
-        	// take old value 
-        	var cookieUpdate = JSON.parse(cookies.get('cookieStore'));
-        	cookieUpdate.push(entryStore);
-        	cookies.set('cookieStore', JSON.stringify(cookieUpdate));
+            // take old value 
+            var cookieUpdate = JSON.parse(cookies.get('cookieStore'));
+            cookieUpdate.push(entryStore);
+            cookies.set('cookieStore', JSON.stringify(cookieUpdate));
 
-        // New cookie - > store it.
+            // New cookie - > store it.
         } else {
 
-        	$scope.entries = [];
-        	$scope.entries.push(entryStore);
-        	cookies.set('cookieStore', JSON.stringify($scope.entries));
+            $scope.entries = [];
+            $scope.entries.push(entryStore);
+            cookies.set('cookieStore', JSON.stringify($scope.entries));
         }
 
-    
-        /*
-        $.ajax({
-            type: "POST",
-            url: "~/keywordSearch/scrapy crawl keyword_search -a start_url=http://www.reddit.com -a find_word=hello -s CLOSESPIDER_PAGECOUNT=10 -o testoutput.JSON -t json",
-            data: { param: "text" }
-        }).done(function(o) {
-            console.log("data returned");
-        });
+        //127.0.0.1:5000/breadth/url/http://www.reddit.com/max/10/keyword/earth
+        //127.0.0.1:5000/depth/url/http://www.reddit.com/max/10/keyword/earth
 
-        */
+        $location.path('/viewer');
+        $location.replace();
         $window.location.href = $location.path();
-        //$location.path('/viewer');
-        //$location.replace();
-        //$window.location.href = $location.path();
+
+        $.ajax({
+            url: "HTTP://127.0.0.1:5000/breadth/url/http://www.reddit.com/max/10/keyword/earth",
+            type: "GET",
+            contentType: "application/json",
+            success: function(data) {
+                $location.path('/viewer');
+                $location.replace();
+                $window.location.href = $location.path();
+            }
+        });
     };
+
+    $scope.restart = function() {
+        $.ajax({
+            url: "HTTP://127.0.0.1:5000/breadth/url/http://www.reddit.com/max/10/keyword/earth",
+            type: "GET",
+            contentType: "application/json",
+            success: function(data) {
+                $location.path('/viewer');
+                $location.replace();
+                $window.location.href = $location.path();
+            }
+        });
+    }
 
 }]);

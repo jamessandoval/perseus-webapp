@@ -20,6 +20,9 @@ gem 'rails-assets-ng-cookies', source: 'https://rails-assets.org'
 # d3 - data visualiztion:
 gem 'd3-rails'
 
+# Import cocaine for command lines
+gem 'cocaine', '~> 0.5.8'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.2'
 # Use mysql as the database for Active Record

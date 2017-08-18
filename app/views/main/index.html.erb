@@ -38,27 +38,36 @@
         <br>
         <br>
     </form>
-
-    <div id="dataContainer" ng-show="entries != null">
-    <h4>Previous Search Parameters:</h4>
-    <button class="btn btn-warning" ng-click="cookiereset()">Reset Cookies</button>
-    <br>
-        <table class="table">
-            <tr>
-                <th>URL:</th>
-                <th>Keyword:</th>
-                <th>Type:</th>
-            </tr>
-            <tr ng-repeat="entry in entries">
-                <td>{{entry.url}}</td>
-                <td>{{entry.keyword}}</td>
-                <td>{{entry.type}}</td>
-            </tr>
-            <tr><td colspan="3"></td></tr>
-        </table>
-
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div id="dataContainer">
+                    <h4>Previous Search Parameters:</h4>
+                    <button class="btn btn-warning" ng-click="cookiereset()" style="margin-bottom: 1em;">Reset Cookies</button>
+                    <br>
+                    <table class="table">
+                        <tr>
+                            <th>URL:</th>
+                            <th>Keyword:</th>
+                            <th>Type:</th>
+                            <th>Options:</th>
+                        </tr>
+                        <tr ng-repeat="entry in entries">
+                            <td>{{entry.url}}</td>
+                            <td>{{entry.keyword}}</td>
+                            <td>{{entry.type}}</td>
+                            <td><button class="btn btn-primary" ng-click="restart()">Restart</button></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
     </div>
-</div>
-<script>
-document.getElementById("home_nav").classList.add("active")
-</script>
+    <script>
+    document.getElementById("home_nav").classList.add("active")
+    </script>

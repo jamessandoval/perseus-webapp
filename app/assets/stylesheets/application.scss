@@ -43,13 +43,21 @@
 
 }
 
-/* Viewer Container */
+/* Theme Assets */
 
-#viewer {
+.mainpadding {
+  
+  padding:2em;
+  
+}
+
+/* Viewer Container */
+#viewer svg {
+
     background-color: #191919;
     border: solid 1px #999999;
-    width: 100%;
-    height: 35vw;
+    width: 800px;
+    height: 500px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -62,9 +70,22 @@
     margin-top: 1em;
 }
 
+#UrlView {
+  
+  height:40%;
 
-/* Theme Assets */
+}
+#UrlView h3 {
+  
+  color: #0080FF;
 
+}
+
+#UrlView h4 {
+  
+  color: #0080FF;
+
+}
 
 /*
  * Globals
@@ -226,6 +247,8 @@ body {
   .mastfoot {
     position: fixed;
     bottom: 0;
+    padding-bottom:2em;
+
   }
   /* Start the vertical centering */
   .site-wrapper-inner {
@@ -240,6 +263,6 @@ body {
 
 @media (min-width: 992px) {
   .masthead, .mastfoot, .cover-container {
-    width: 700px;
+    width: 100%;
   }
 }
