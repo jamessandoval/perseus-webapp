@@ -42,7 +42,7 @@ var max = getParameterByName('max');
 var canvas = d3.select('svg');
 // https://api.myjson.com/bins/gl1c1
 // https://api.myjson.com/bins/v1vc1
-scrapyUrl = "http://127.0.0.1:5000/"+type+"/url/"+url+"/max/"+max+"/keyword/"+keyword+"";
+scrapyUrl = "http://127.0.0.1:33507/"+type+"/url/"+url+"/max/"+max+"/keyword/"+keyword+"";
 console.log(scrapyUrl)
 
 var somevalue = d3.json(scrapyUrl, function(data) {
