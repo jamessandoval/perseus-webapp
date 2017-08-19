@@ -16,3 +16,5 @@ class urlMap(scrapy.Item):
 	scrapeTarget = scrapy.Field()  #used in keyword_search spider to hold keyword
 	urlDict = scrapy.Field()       #the name of dictionary output to to into JSON file (ie 'searching' or 'foundTarget')
 	targetNode = scrapy.Field()    #text containing the keyword
+	title = scrapy.Field()
+	latency = scrapy.Field()

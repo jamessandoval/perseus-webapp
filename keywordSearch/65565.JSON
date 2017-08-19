@@ -1,0 +1,18 @@
+[
+{"urlDict": {"foundTarget": "https://www.reddit.com/"}, "targetNode": ["reset password"], "title": ["reddit: the front page of the internet"], "latency": 0.3955390453338623},
+{"urlDict": {"foundTarget": "https://www.reddit.com/subreddits/"}, "targetNode": ["reset password"], "title": ["subreddits"], "latency": 0.1940908432006836},
+{"urlDict": {"foundTarget": "https://www.reddit.com/r/popular/"}, "targetNode": ["reset password"], "title": ["popular links"], "latency": 1.3246870040893555},
+{"urlDict": {"foundTarget": "https://www.reddit.com/r/all/"}, "targetNode": ["reset password"], "title": ["all subreddits"], "latency": 0.23715591430664062},
+{"urlDict": {"foundTarget": "https://www.reddit.com/r/AskReddit/"}, "targetNode": ["reset password"], "title": ["Ask Reddit..."], "latency": 0.3773059844970703},
+{"urlDict": {"foundTarget": "https://www.reddit.com/r/pics/"}, "targetNode": ["reset password"], "title": ["Reddit Pics"], "latency": 0.3192708492279053},
+{"urlDict": {"foundTarget": "https://www.reddit.com/r/funny/"}, "targetNode": ["reset password"], "title": ["funny"], "latency": 0.3240950107574463},
+{"urlDict": {"foundTarget": "https://www.reddit.com/r/news/"}, "targetNode": ["reset password"], "title": ["All news, US and international."], "latency": 0.41533994674682617},
+{"urlDict": {"foundTarget": "https://www.reddit.com/r/worldnews/"}, "targetNode": ["reset password"], "title": ["World News"], "latency": 0.4661998748779297},
+{"urlDict": {"foundTarget": "https://www.reddit.com/r/videos/"}, "targetNode": ["reset password"], "title": ["/r/Videos"], "latency": 0.45107197761535645},
+{"urlDict": {"foundTarget": "https://www.reddit.com/r/todayilearned/"}, "targetNode": ["reset password"], "title": ["Today I Learned (TIL)"], "latency": 0.4998130798339844},
+{"urlDict": {"foundTarget": "https://www.reddit.com/r/gaming/"}, "targetNode": ["reset password"], "title": ["r/gaming"], "latency": 0.42157983779907227},
+{"urlDict": {"foundTarget": "https://www.reddit.com/r/aww/"}, "targetNode": ["reset password"], "title": ["A subreddit for cute and cuddly pictures"], "latency": 0.37526583671569824},
+{"urlDict": {"foundTarget": "https://www.reddit.com/r/gifs/"}, "targetNode": ["reset password"], "title": [".gifs - funny, animated gifs for your viewing pleasure"], "latency": 0.4328498840332031},
+{"urlDict": {"foundTarget": "https://www.reddit.com/r/IAmA/"}, "targetNode": ["reset password"], "title": ["I Am A, where the mundane becomes fascinating and the outrageous suddenly seems normal."], "latency": 0.2863180637359619},
+{"urlDict": {"foundTarget": "https://www.reddit.com/r/movies/"}, "targetNode": ["reset password"], "title": ["Movie News and Discussion"], "latency": 0.38306212425231934}
+]
