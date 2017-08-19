@@ -55,8 +55,8 @@ app.controller('MainCtrl', ['$scope', '$location', '$window', 'cookies', '$http'
             cookies.set('cookieStore', JSON.stringify($scope.entries));
         }
 
-        //127.0.0.1:5000/breadth/url/http://www.reddit.com/max/10/keyword/earth
-        //127.0.0.1:5000/depth/url/http://www.reddit.com/max/10/keyword/earth
+        //127.0.0.1:33507/breadth/url/http://www.reddit.com/max/10/keyword/earth
+        //127.0.0.1:33507/depth/url/http://www.reddit.com/max/10/keyword/earth
 
 
         var url = self.entry.url;
