@@ -13,10 +13,10 @@ CORS(APP)
 
 #cors = CORS(APP, resources={r"/breadth": {"origins": "http://localhost:port"}})
 
-# 127.0.0.1:33507/breadth/url/http://www.reddit.com/max/10/keyword/earth
+# 127.0.0.1:5000/breadth/url/http://www.reddit.com/max/10/keyword/earth
 @APP.route('/breadth/url/<path:url>/max/<int:max>/keyword/<string:keyword>')
 def breadth(url, max, keyword):
-    """ Displays the index page accessible at '127.0.0.1:33507'
+    """ Displays the index page accessible at '127.0.0.1:5000'
     """
     pid = os.getpid()
     proc = subprocess.Popen(["ls"])
@@ -36,10 +36,10 @@ def breadth(url, max, keyword):
     response.headers['Cache-Control'] = 'public, max-age=0'
     return response
 
-# 127.0.0.1:33507/depth/url/http://www.reddit.com/max/10/keyword/earth
+# 127.0.0.1:5000/depth/url/http://www.reddit.com/max/10/keyword/earth
 @APP.route('/depth/url/<path:url>/max/<int:max>/keyword/<string:keyword>')
 def depth(url, max, keyword):
-    """ Displays the index page accessible at '127.0.0.1:33507'
+    """ Displays the index page accessible at '127.0.0.1:5000'
     """
     pid = os.getpid()
     proc = subprocess.Popen(["ls"])
@@ -58,13 +58,5 @@ def depth(url, max, keyword):
     response.headers['Cache-Control'] = 'public, max-age=0'
     return response
 
-@APP.route('/test')
-def test():
-    """ Displays the index page accessible at '127.0.0.1:33507'
-    """
-    console.log("hello from test route")
-    return 0
-
 if __name__ == '__main__':
-    # port = int(os.environ.get('PORT', 443))
     APP.run()
