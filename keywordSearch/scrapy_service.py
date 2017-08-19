@@ -58,6 +58,13 @@ def depth(url, max, keyword):
     response.headers['Cache-Control'] = 'public, max-age=0'
     return response
 
+@APP.route('/test')
+def test():
+    """ Displays the index page accessible at '127.0.0.1:33507'
+    """
+    console.log("hello from test route")
+    return 0
+
 if __name__ == '__main__':
     # port = int(os.environ.get('PORT', 443))
     APP.run()
