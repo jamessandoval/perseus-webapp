@@ -1,1 +1,1 @@
-web: python scrapy_service.py
+web: python ./keywordSearch/scrapy_service.py
