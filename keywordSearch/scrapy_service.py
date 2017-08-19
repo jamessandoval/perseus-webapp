@@ -59,6 +59,4 @@ def depth(url, max, keyword):
     return response
 
 if __name__ == '__main__':
-    # port = int(os.environ.get('PORT', 33507))
-    APP.debug=True
     APP.run()
