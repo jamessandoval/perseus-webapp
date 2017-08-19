@@ -42,10 +42,10 @@ var max = getParameterByName('max');
 var canvas = d3.select('svg');
 // https://api.myjson.com/bins/gl1c1
 // https://api.myjson.com/bins/v1vc1
-scrapyUrl = "http://127.0.0.1:5000/"+type+"/url/"+url+"/max/"+max+"/keyword/"+keyword+"";
-console.log(scrapyUrl)
+//scrapyUrl = "http://127.0.0.1:5000/"+type+"/url/"+url+"/max/"+max+"/keyword/"+keyword+"";
+//console.log("https://api.myjson.com/bins/v1vc1");
 
-var somevalue = d3.json(scrapyUrl, function(data) {
+var somevalue = d3.json("https://api.myjson.com/bins/gl1c1", function(data) {
 
     function rand(min, max) {
         return Math.round(Math.random() * (max - min) + min);

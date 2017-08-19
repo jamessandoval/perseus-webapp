@@ -21,6 +21,7 @@ app.controller('MainCtrl', ['$scope', '$location', '$window', 'cookies', '$http'
     // cookie reset 
     $scope.cookiereset = function() {
         cookies.set('cookieStore', "");
+        $window.location.href = $location.path();
 
     }
 
