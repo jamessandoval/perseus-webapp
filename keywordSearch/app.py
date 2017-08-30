@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 import flask
 import os
 import subprocess
@@ -8,13 +7,16 @@ from flask_cors import CORS, cross_origin
 
 
 # Create the application.
-APP = flask.Flask(__name__)
-CORS(APP)
+app = flask.Flask(__name__)
+CORS(app)
 
-#cors = CORS(APP, resources={r"/breadth": {"origins": "http://localhost:port"}})
+#cors = CORS(app, resources={r"/breadth": {"origins": "http://localhost:port"}})
+@app.route('/')
+def index():
+    return 'scrapy app is working'
 
 # 127.0.0.1:5000/breadth/url/http://www.reddit.com/max/10/keyword/earth
-@APP.route('/breadth/url/<path:url>/max/<int:max>/keyword/<string:keyword>')
+@app.route('/breadth/url/<path:url>/max/<int:max>/keyword/<string:keyword>')
 def breadth(url, max, keyword):
     """ Displays the index page accessible at '127.0.0.1:5000'
     """
@@ -37,7 +39,7 @@ def breadth(url, max, keyword):
     return response
 
 # 127.0.0.1:5000/depth/url/http://www.reddit.com/max/10/keyword/earth
-@APP.route('/depth/url/<path:url>/max/<int:max>/keyword/<string:keyword>')
+@app.route('/depth/url/<path:url>/max/<int:max>/keyword/<string:keyword>')
 def depth(url, max, keyword):
     """ Displays the index page accessible at '127.0.0.1:5000'
     """
@@ -59,4 +61,6 @@ def depth(url, max, keyword):
     return response
 
 if __name__ == '__main__':
-    APP.run()
+
+    app.debug=True
+    app.run()
